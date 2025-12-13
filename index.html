@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobail APPS</title>
+    <!-- daisyUI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwind CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+</head>
+    <body class="bg-[#f4f5f7] h-[100vh] flex flex-col justify-center items-center">
+        <div class="h-[130px] w-[300px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+            <img src="assets/Group.png" alt="">
+        </div>
+       <form class=" w-[350px] bg-white rounded-2xl p-8 ">
+        <div>
+            <label class="
+            font-semibold" for="">Mobail Number</label>
+            <br>
+            <br>
+            <input type="text" placeholder="Enter Your Number" id="mobile-number" class="input bg-[#f4f5f7] rounded-3xl" />
+        </div>
+        <div class="Pin-number mt-5">
+            <label class="
+            font-semibold" for="">4 Digit Pin</label>
+            <br>
+            <input type="text" placeholder="Enter Your 4 Digit Pin " id="Pin-number" class="input bg-[#f4f5f7] mt-3 rounded-3xl" />
+        </div>
+<!-- type="button" use na korle reaload korar por seta show korbe na console e and normal button hisebe use hobe -->
+        <button  class="btn bg-[#0874F2] text-white mt-5
+        w-full rounded-3xl" id="Login-Button">Login</button>
+       </form>
+
+
+       <!-- js script -->
+        <script src="nextPage.js"></script>
+    </body>
+</html>
