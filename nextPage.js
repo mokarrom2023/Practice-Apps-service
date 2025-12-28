@@ -14,7 +14,7 @@ document.getElementById("Login-Button") .addEventListener("click",function(e){
 
 
     if(mobileNumberValueConverted === mobileNumber && pinNumberValueConverted === pinNumber){
-        window.location.href ="./Home.html"
+        window.location.href ="Home.html"
     }
     else{
         alert("error")
