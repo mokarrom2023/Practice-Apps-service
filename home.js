@@ -1,4 +1,6 @@
-const validPin = 1234
+const validPin = parseInt(localStorage.getItem("userPin"));
+
+// const validPin = 1234
 //REUSEable function
 //function to get input value (number value add korar jonno)
 
@@ -91,34 +93,43 @@ document.getElementById("add-money-bt").addEventListener("click", function(e){
 
 //cash out money feature
 
+
+// --- Cash Out Money Feature সংশোধন ---
 document.getElementById("Withdraw-btn").addEventListener("click", function(e){
-    e.preventDefault()
+    e.preventDefault();
 
-    const agentNumber =getInputValueNumber("agent-number")
+    const agentNumberValue = document.getElementById("agent-number").value; // value নিন length চেক করার জন্য
+    const mainBalance = getInnerText("main-balance");
+    const amount = getInputValueNumber("withdraw-amount");
+    const pinNumber = getInputValueNumber("pin-num");
 
-    const mainBalance = getInnerText("main-balance")
-
-    const amount = parseInt(document.getElementById("withdraw-amount").value)
-
-    const pinNumber = parseInt(document.getElementById("pin-num").value)
-
-   if(agentNumber.length <11){
-        alert("Please provide your account number ")
+    if(agentNumberValue.length !== 11){ // সঠিকভাবে চেক করার নিয়ম
+        alert("Please provide valid 11 digit agent number");
         return;
     }
 
     if(pinNumber !== validPin){
-        alert("pin error")
+        alert("Incorrect Pin Number!");
         return;
     }
 
-    const totalNewMainBalance = mainBalance - amount
-    console.log(totalNewMainBalance)
+    if(amount > mainBalance){
+        alert("Insufficient balance");
+        return;
+    }
 
-    setInnerText(totalNewMainBalance)
+    const totalNewMainBalance = mainBalance - amount;
+    setInnerText(totalNewMainBalance);
+    alert("Cash out successful ✅");
+});
 
-     
-})
+// --- Logout Button সংশোধন ---
+document.getElementById("logout-btn").addEventListener("click", function () {
+    const confirmLogout = confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+        window.location.href = "index.html";
+    }
+});
 
 // transfer money feature
 document.getElementById("transfer-btn").addEventListener("click", function(e){
