@@ -281,3 +281,12 @@ document.getElementById("transaction-btn").addEventListener("click",function(){
     //button select color
     handleToggleBtn("transaction-btn")
 })
+
+
+//logout button
+document.getElementById("logout-btn").addEventListener("click", function () {
+    const confirmLogout = confirm
+    if (confirmLogout) {
+        window.location.href = "index.html";
+    }
+});
