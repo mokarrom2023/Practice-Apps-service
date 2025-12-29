@@ -94,7 +94,7 @@ document.getElementById("add-money-bt").addEventListener("click", function(e){
 document.getElementById("Withdraw-btn").addEventListener("click", function(e){
     e.preventDefault()
 
-    const agentNumber = document.getInputValueNumber("agent-number")
+    const agentNumber =getInputValueNumber("agent-number")
 
     const mainBalance = getInnerText("main-balance")
 
